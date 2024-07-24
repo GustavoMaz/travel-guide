@@ -22,7 +22,7 @@
       </ul>
     </li>
     <li>
-      <img src="#"> <!--Ícone de busca-->
+      <img src="../src/assets/search.png">
       <input type="text" name="search" id="search" placeholder="Para onde você quer ir?">
       <label for="search"><button>Buscar</button></label>
     </li>
@@ -97,6 +97,14 @@
             </li>
           </ul>
         </div>
+    </li>
+
+    <li>
+      <div>
+        <h2>Créditos</h2>
+        <a href="https://www.flaticon.com/br/icones-gratis/lupa" rel="external">Ícone de lupa criado por Ayub Irawan - Flaticon</a>
+        <a href="https://www.flaticon.com/br/icones-gratis/estrela" rel="external">Ícone de estrela criado por Revicon - Flaticon</a>
+      </div>
     </li>
 
     <li><p>&copy; 2024 - Nome da empresa. RS, Brasil</p></li>
