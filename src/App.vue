@@ -1,33 +1,5 @@
 <template>
-<nav>
-  <ul>
-    <li><RouterLink to="#">Ínicio</RouterLink></li>
-    <li><RouterLink to="#">Sobre nós</RouterLink></li>
-    <li>
-      Destinos
-      <ul class="dropdown">
-        <li>Mais visitados</li>
-        <li>Temporada</li>
-        <li>Perto de mim</li>
-        <li>
-          Continentes
-          <ul class="dropdown">
-            <li>África</li>
-            <li>América</li>
-            <li>Ásia</li>
-            <li>Europa</li>
-            <li>Oceania</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <img src="../src/assets/search.png">
-      <input type="text" name="search" id="search" placeholder="Para onde você quer ir?">
-      <label for="search"><button>Buscar</button></label>
-    </li>
-  </ul>
-</nav>
+<NavBar></NavBar>
 
 <header>
   <h1>Descubra o mundo com a gente.</h1>
@@ -40,7 +12,7 @@
     <h3>Experiências <span>culturais</span> inesquecíveis.</h3>
     <article>
       <RouterLink>
-        <img src="#" alt="#">
+        <img src="#" alt="">
         <div class="classifier">Tour guiado</div>
         <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea alias corrupti impedit.</h1>
         <div class="rating">
@@ -93,7 +65,7 @@
           <h2>Formas de pagamento</h2>
           <ul>
             <li>
-              <img src="../src/assets/payment-icons/mastercard.png" alt="Mastercard">
+              <img src="@/assets/payment-icons/mastercard.png" alt="Mastercard">
             </li>
           </ul>
         </div>
@@ -114,9 +86,12 @@
 </template>
 
 <script>
+import NavBar from './components/NavBar.vue';
+
 export default {
   name: 'App',
   components: {
+    NavBar
   }
 }
 </script>
