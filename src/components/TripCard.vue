@@ -1,58 +1,74 @@
 <template>
 <article>
     <RouterLink>
-      <img :src="img" :alt="imgAlt">
-      <div class="classifier"><slot name="classifier" /></div>
-      <h1><slot name="title" /></h1>
+      <img 
+        :src="imgSrc"
+        :alt="imgAlt"
+      >
+      <div class="classifier">
+        <slot name="classifier" />
+      </div>
+      <h1>
+        <slot name="title" />
+      </h1>
       <div class="rating">
         <img 
-          src="../assets/star.png" 
+          src="@/assets/rating/star.png" 
           v-for="star in Math.floor(rating)"
           :key="star"
         >
-        <img src="../assets/half-star.png" v-if="displayHalfStar">
-        <img src="../assets/empty-star.png" 
+        <img src="@/assets/rating/half-star.png" v-if="hasHalfStar">
+        <img src="@/assets/rating/empty-star.png" 
           v-for="star in emptyStars"
           :key="star"
         >
-        <span>{{ rating }} / 5 (<slot name="amountOfRatings" />)</span>
+        <span>
+          {{ rating }} / 5 (<slot name="amountOfRatings" />)
+        </span>
       </div>
-      <p>A partir de R$ <slot name="price" /> <span>por pessoa</span></p>
+      <p>
+        A partir de R$<slot name="price" /> <span>por pessoa</span>
+      </p>
     </RouterLink>
   </article>
-</template>
+  </template>
 
 <script>
+//import { computed } from 'vue';
+
 export default {
   props: {
     img: {
       type: String,
-      default: 'https://placehold.co/288x288'
+      required: true
     },
     imgAlt: {
-      type: String
+      type: String,
+      required: true
     },
     rating: {
       type: Number,
-      default: 4
-    },
-    price: {
-      type: String,
-      default: '99,90'
+      required: true
     }
   },
 
-  setup(props) {
-    function isFloat(n) {
-      return Math.floor(n) !== n;
-    }
-    const displayHalfStar = isFloat(props.rating);
-    const emptyStars = 5- Math.floor(props.rating) - displayHalfStar;
-
+  setup() {
+    const isFloat = (n) => Math.floor(n) !== n;
 
     return {
-      displayHalfStar,
-      emptyStars
+      isFloat
+    }
+  },
+
+  computed: {
+    hasHalfStar() {
+      return this.isFloat(this.rating);
+    },
+    emptyStars() {
+      return 5 - Math.floor(this.rating) - (this.hasHalfStar);
+    },
+    imgSrc() {
+      return require(`@/assets/photos/${this.img}`);
     }
   }
 }
