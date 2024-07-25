@@ -1,9 +1,9 @@
 <template>
 <article>
     <RouterLink>
-      <img :src="img" alt="">
-      <div class="classifier">Tour guiado</div>
-      <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea alias corrupti impedit.</h1>
+      <img :src="img" :alt="imgAlt">
+      <div class="classifier"><slot name="classifier" /></div>
+      <h1><slot name="title" /></h1>
       <div class="rating">
         <img 
           src="../assets/star.png" 
@@ -11,9 +11,13 @@
           :key="star"
         >
         <img src="../assets/half-star.png" v-if="displayHalfStar">
-        <span>{{ rating }} / 5 (1680)</span>
+        <img src="../assets/empty-star.png" 
+          v-for="star in emptyStars"
+          :key="star"
+        >
+        <span>{{ rating }} / 5 (<slot name="amountOfRatings" />)</span>
       </div>
-      <p>A partir de R$130,000 <span>por pessoa</span></p>
+      <p>A partir de R$ <slot name="price" /> <span>por pessoa</span></p>
     </RouterLink>
   </article>
 </template>
@@ -25,9 +29,16 @@ export default {
       type: String,
       default: 'https://placehold.co/288x288'
     },
+    imgAlt: {
+      type: String
+    },
     rating: {
       type: Number,
-      default: 3.5
+      default: 4
+    },
+    price: {
+      type: String,
+      default: '99,90'
     }
   },
 
@@ -36,8 +47,12 @@ export default {
       return Math.floor(n) !== n;
     }
     const displayHalfStar = isFloat(props.rating);
+    const emptyStars = 5- Math.floor(props.rating) - displayHalfStar;
+
+
     return {
-      displayHalfStar
+      displayHalfStar,
+      emptyStars
     }
   }
 }
