@@ -1,8 +1,8 @@
 <template>
 <nav>
   <ul>
-    <li><RouterLink to="#">Ínicio</RouterLink></li>
-    <li><RouterLink to="#">Sobre nós</RouterLink></li>
+    <li><a href="#">Ínicio</a></li>
+    <li><RouterLink to="/about">Sobre nós</RouterLink></li>
     <li>
       <DropDown text="Destinos">
         <DropDownItem>Mais visitados</DropDownItem>

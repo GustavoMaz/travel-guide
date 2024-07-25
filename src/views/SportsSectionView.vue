@@ -15,7 +15,7 @@
   <TripCard
     rating="4.9"
     img="zipline.jpg"
-    imgAlt="Tirolesa"
+    imgAlt="Tirolesa em meio a floresta"
   >
     <template v-slot:classifier>Radical</template>
     <template v-slot:title>Experiência de tirolesa em Whistler: Ziptrek Eagle Tour</template>
