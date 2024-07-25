@@ -3,11 +3,30 @@
 
 <TheHeader></TheHeader>
 
+<nav id="section-navigation" class="section-navigation">
+  <ul>
+    <li>
+      <RouterLink to="/culture">Cultura</RouterLink> 
+    </li>
+    
+    <li>
+      <RouterLink>Gastronomia</RouterLink> 
+    </li>
+
+    <li>
+      <RouterLink>Natureza</RouterLink> 
+    </li>
+
+    <li>
+      <RouterLink>Esportes</RouterLink> 
+    </li>
+  </ul>
+</nav>
+
 <main>
-  <ContentSection sectionId="culture">
-    <template v-slot:title>Cultura</template>
-    <template v-slot:subtitleFiller>culturais</template>
-  </ContentSection>
+  <RouterView />
+
+
 </main>
 
 <footer>
@@ -73,14 +92,12 @@
 <script>
 import NavBar from '@/components/NavBar.vue';
 import TheHeader from '@/components/TheHeader.vue';
-import ContentSection from '@/components/ContentSection.vue';
 
 export default {
   name: 'App',
   components: {
     NavBar,
     TheHeader,
-    ContentSection
   }
 }
 </script>
