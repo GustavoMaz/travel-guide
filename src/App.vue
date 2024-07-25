@@ -1,28 +1,13 @@
 <template>
 <NavBar></NavBar>
 
-<header>
-  <h1>Descubra o mundo com a gente.</h1>
-  <button>Reserve a sua aventura agora</button>
-</header>
+<TheHeader></TheHeader>
 
 <main>
-  <section id="culture">
-    <h2>Cultura</h2>
-    <h3>Experiências <span>culturais</span> inesquecíveis.</h3>
-    <article>
-      <RouterLink>
-        <img src="#" alt="">
-        <div class="classifier">Tour guiado</div>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea alias corrupti impedit.</h1>
-        <div class="rating">
-          <img src="" alt=""> <!--Ícones de estrelas -->
-          <span>4.5 / 5 (1680)</span>
-        </div>
-        <p>A partir de R$130,000 <span>por pessoa</span></p>
-      </RouterLink>
-    </article>
-  </section>
+  <ContentSection sectionId="culture">
+    <template v-slot:title>Cultura</template>
+    <template v-slot:subtitleFiller>culturais</template>
+  </ContentSection>
 </main>
 
 <footer>
@@ -86,12 +71,16 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
+import NavBar from '@/components/NavBar.vue';
+import TheHeader from '@/components/TheHeader.vue';
+import ContentSection from '@/components/ContentSection.vue';
 
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    TheHeader,
+    ContentSection
   }
 }
 </script>
