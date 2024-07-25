@@ -1,30 +1,101 @@
 <template>
+<NavBar></NavBar>
+
+<TheHeader></TheHeader>
+
+<nav id="section-navigation" class="section-navigation">
+  <ul>
+    <li>
+      <RouterLink to="/culture">Cultura</RouterLink> 
+    </li>
+
+    <li>
+      <RouterLink to="/gastronomy">Gastronomia</RouterLink> 
+    </li>
+
+    <li>
+      <RouterLink to="/nature">Natureza</RouterLink> 
+    </li>
+
+    <li>
+      <RouterLink to="/sports">Esportes</RouterLink> 
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <RouterView />
+</main>
+  
+<footer>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <ul>
+      <li>
+        <div>
+          <h2>Suporte</h2>
+          <ul>
+            <li><RouterLink to="#">Contato</RouterLink></li>
+            <li><RouterLink to="#">Avisos legais</RouterLink></li>
+            <li><RouterLink to="#">Política de privacidade</RouterLink></li>
+            <li><RouterLink to="#">Termos e condições gerais</RouterLink></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+          <div>
+            <h2>Redes sociais</h2>
+            <ul>
+              <li><img src="#" alt="Instagram"></li>
+              <li><img src="#" alt="X"></li>
+              <li><img src="#" alt="Facebook"></li>
+            </ul>
+  
+          </div>
+      </li>
+      <li>
+          <div>
+            <h2>Empresa</h2>
+            <ul>
+              <li><RouterLink to="#">Quem somos</RouterLink></li>
+              <li><RouterLink to="#">Trabalhe conosco</RouterLink></li>
+              <li><RouterLink to="#">Blog</RouterLink></li>
+            </ul>
+          </div>
+      </li>
+      <li>
+          <div>
+            <h2>Formas de pagamento</h2>
+            <ul>
+              <li>
+                <img src="@/assets/payment-icons/mastercard.png" alt="Mastercard">
+              </li>
+            </ul>
+          </div>
+      </li>
+  
+      <li>
+        <div>
+          <h2>Créditos</h2>
+          <a href="https://www.flaticon.com/br/icones-gratis/lupa" rel="external">Ícone de lupa criado por Ayub Irawan - Flaticon</a>
+          <a href="https://www.flaticon.com/br/icones-gratis/estrela" rel="external">Ícone de estrela criado por Revicon - Flaticon</a>
+        </div>
+      </li>
+  
+      <li><p>&copy; 2024 - Nome da empresa. RS, Brasil</p></li>
+    </ul>
   </nav>
-  <router-view/>
+</footer>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import NavBar from '@/components/NavBar.vue';
+import TheHeader from '@/components/TheHeader.vue';
+
+export default {
+  components: {
+    NavBar,
+    TheHeader
+  }
 }
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

@@ -1,5 +1,5 @@
 <template>
-<ContentSection sectionId="culture">
+<ContentSection id="culture">
   <template v-slot:subtitleFiller>culturais</template>
   <TripCard
     rating="4.8"
