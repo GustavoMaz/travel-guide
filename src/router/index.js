@@ -1,14 +1,22 @@
 import { createMemoryHistory, createRouter } from 'vue-router';
 
-import HomeView from '@views/HomeView.vue';
-import CultureSectionView from '@views/CultureSectionView.vue';
-
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/culture', component: CultureSectionView },
+  {
+    path: '/', 
+    name: 'home',
+    component: () => import('@/views/CultureSectionView.vue') 
+  },
+
+  {
+    path: '/culture', 
+    name: 'culture',
+    component: () => import('@/views/CultureSectionView.vue') 
+  }
 ]
 
 const router = createRouter({
   history: createMemoryHistory(),
-  routes,
+  routes
 })
+
+export default router
