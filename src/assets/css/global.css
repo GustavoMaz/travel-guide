@@ -1,0 +1,23 @@
+:root {
+  /* Paleta de cores */
+  --bg-color: #FFFFFF;
+  --primary: #00BCD4;
+  --dark-primary: #0097a7;
+  --light-primary: #B2EBF2;
+  --accent: #FF9800;
+  --text-primary: #0B1215;
+  --text-secondary: #4A616B;
+
+  /* Tamanhos para as margens de baixo */
+  --m-bottom-xs: 0.25rem;
+  --m-bottom-s: 0.5rem;
+  --m-bottom-m: 1.25rem;
+  --m-bottom-l: 2rem;
+  --m-bottom-xl: 5rem;
+  --m-bottom-xxl: 7.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

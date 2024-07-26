@@ -1,5 +1,6 @@
 <template>
-<nav>
+<nav id="main-navigation">
+  <div class="logo">LOGO</div>
   <ul>
     <li><a href="#">Ínicio</a></li>
     <li><RouterLink to="/about">Sobre nós</RouterLink></li>
@@ -39,3 +40,13 @@ export default {
   }
 }
 </script>
+
+<style>
+#main-navigation {
+  background-color: var(--bg-color);
+
+  display: flex;
+  width: 100vw;
+
+}
+</style>

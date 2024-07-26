@@ -2,8 +2,8 @@ import { createMemoryHistory, createRouter } from 'vue-router';
 
 const routes = [
   {
-    path: '/culture', 
-    name: 'culture',
+    path: '/', 
+    name: '',
     component: () => import('@/views/CultureSectionView.vue') 
   },
   {

@@ -6,7 +6,7 @@
 <nav id="section-navigation" class="section-navigation">
   <ul>
     <li>
-      <RouterLink to="/culture">Cultura</RouterLink> 
+      <RouterLink to="/">Cultura</RouterLink> 
     </li>
     
     <li>
