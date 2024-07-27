@@ -8,9 +8,9 @@
       <div class="classifier">
         <slot name="classifier" />
       </div>
-      <h1>
+      <h3>
         <slot name="title" />
-      </h1>
+      </h3>
       <div class="rating">
         <img 
           src="@/assets/rating/star.png" 

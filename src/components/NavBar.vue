@@ -26,8 +26,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--text-primary)" class="bi bi-search search-icon" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
           </svg>
+          <input type="text" name="search" id="search" placeholder="Para onde você quer ir?" autocomplete="off">
         </div>
-        <input type="text" name="search" id="search" placeholder="Para onde você quer ir?" autocomplete="off">
         <label for="search">
           <button class="main-action-button">Buscar</button>
         </label>
@@ -65,7 +65,7 @@ export default {
   grid-column: 2;
 }
 
-.search-bar, #main-navigation .container {
+.search-bar, #main-navigation .container, .search-icon-wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,6 +76,7 @@ export default {
   border: 2px solid var(--primary);
   padding: 0.5rem;
   padding-left: 0.75rem;
+  min-width: 25vw;
 }
 
 .search-bar input {
