@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.dropdown {
+  display: none;
+}
+</style>

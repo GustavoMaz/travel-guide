@@ -5,6 +5,7 @@
   --dark-primary: #0097a7;
   --light-primary: #B2EBF2;
   --accent: #FF9800;
+  --dark-accent: hsl(24, 100%, 41%);
   --text-primary: #0B1215;
   --text-secondary: #4A616B;
 
@@ -20,4 +21,23 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.main-action-button {
+  border-radius: 16px;
+  color: var(--bg-color);
+  padding: 0.59375rem;
+  font-weight: bold;
+  border: none;
+  background-color: var(--primary);
+}
+
+.main-action-button:hover {
+  cursor: pointer;
+  background-color: var(--dark-primary);
+  transition: .2s;
 }
