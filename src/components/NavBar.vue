@@ -3,12 +3,12 @@
   <div class="container">
     <div class="logo">LOGO</div>
     <ul class="nav-list">
-      <li class="nav-item"><a href="#" class="anchor">Ínicio</a></li>
-      <li class="nav-item"><RouterLink to="/about" class="anchor">Sobre nós</RouterLink></li>
+      <li class="nav-item"><a href="#">Ínicio</a></li>
+      <li class="nav-item"><RouterLink to="/about">Sobre nós</RouterLink></li>
       <li class="nav-item">
         <DropDown>
           <template v-slot:title>
-            <RouterLink to="#" class="anchor">Destinos &#9662;</RouterLink>
+            <RouterLink to="#">Destinos &#9662;</RouterLink>
           </template>
           <DropDownItem>Mais visitados</DropDownItem>
           <DropDownItem>Temporada</DropDownItem>
@@ -16,7 +16,7 @@
           <DropDownItem>
             <DropDown subMenuLevel="1">
               <template v-slot:title>
-                <RouterLink to="#" class="anchor">Continentes &#9662;</RouterLink>
+                <RouterLink to="#">Continentes &#9662;</RouterLink>
               </template>
               <DropDownItem>África</DropDownItem>
               <DropDownItem>América</DropDownItem>
@@ -60,7 +60,6 @@ export default {
   background-color: var(--bg-color);
   width: 100%;
   display: grid;
-  grid-template-columns: 4.5rem auto 4.5rem;
   white-space: nowrap;
   position: sticky;
   top: 0;
@@ -71,7 +70,9 @@ export default {
 }
 
 #main-navigation .container {
-  grid-column: 2;
+  box-sizing: border-box;
+  min-width: 100%;
+  padding: 0.5rem 2rem;
 }
 
 .search-bar, 
@@ -86,6 +87,11 @@ export default {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+}
+
+.nav-item {
+  margin-left: 4vw;
+  position: relative;
 }
 
 .search-bar {
@@ -107,12 +113,8 @@ export default {
   color: var(--text-primary);
 }
 
-.nav-item {
-  margin: 0 2vw;
-  position: relative;
-}
 
-.nav-item .anchor {
+.nav-item a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
@@ -126,6 +128,11 @@ export default {
   width: 11rem;
   box-sizing: border-box;
   border-radius: 16px;
+}
+
+.dropdown .dropdown-item a { 
+  margin: 0;
+  color: var(--text-primary);
 }
 
 .dropdown li:not(:last-of-type) {
