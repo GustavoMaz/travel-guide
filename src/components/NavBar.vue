@@ -3,15 +3,21 @@
   <div class="container">
     <div class="logo">LOGO</div>
     <ul class="nav-list">
-      <li class="nav-item"><a href="#">Ínicio</a></li>
-      <li class="nav-item"><RouterLink to="/about">Sobre nós</RouterLink></li>
+      <li class="nav-item"><a href="#" class="anchor">Ínicio</a></li>
+      <li class="nav-item"><RouterLink to="/about" class="anchor">Sobre nós</RouterLink></li>
       <li class="nav-item">
-        <DropDown text="Destinos">
+        <DropDown>
+          <template v-slot:title>
+            <RouterLink to="#" class="anchor">Destinos &#9662;</RouterLink>
+          </template>
           <DropDownItem>Mais visitados</DropDownItem>
           <DropDownItem>Temporada</DropDownItem>
           <DropDownItem>Perto de mim</DropDownItem>
           <DropDownItem>
-            <DropDown text="Continentes">
+            <DropDown subMenuLevel="1">
+              <template v-slot:title>
+                <RouterLink to="#" class="anchor">Continentes &#9662;</RouterLink>
+              </template>
               <DropDownItem>África</DropDownItem>
               <DropDownItem>América</DropDownItem>
               <DropDownItem>Ásia</DropDownItem>
@@ -29,7 +35,7 @@
           <input type="text" name="search" id="search" placeholder="Para onde você quer ir?" autocomplete="off">
         </div>
         <label for="search">
-          <button class="main-action-button">Buscar</button>
+          <button class="main-action-button bg-accent">Buscar</button>
         </label>
       </li>
     </ul>
@@ -54,7 +60,10 @@ export default {
   background-color: var(--bg-color);
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 4.5rem auto 4.5rem;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
 }
 
 #main-navigation ul {
@@ -65,9 +74,17 @@ export default {
   grid-column: 2;
 }
 
-.search-bar, #main-navigation .container, .search-icon-wrapper{
+.search-bar, 
+#main-navigation .container,
+.search-icon-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
 }
 
@@ -90,14 +107,34 @@ export default {
   color: var(--text-primary);
 }
 
-.search-bar .main-action-button {
-  background-color: var(--accent);
+.nav-item {
+  margin: 0 2vw;
+  position: relative;
 }
 
-.search-bar .main-action-button:hover {
-  background-color: var(--dark-accent);
+.nav-item .anchor {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  display: block;
 }
 
+.dropdown {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  position: absolute;
+  width: 11rem;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.dropdown li:not(:last-of-type) {
+  margin-bottom: var(--m-bottom-m);
+}
+
+.dropdown.level-1 {
+  left: 11rem;
+}
 
 /*
 .search-icon-wrapper {
@@ -107,8 +144,5 @@ export default {
   border-radius: 16px 0 0 16px;
 }
 */
-.nav-list {
-  display: flex;
-  flex-wrap: nowrap;
-}
+
 </style>

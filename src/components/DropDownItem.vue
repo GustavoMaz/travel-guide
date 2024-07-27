@@ -1,3 +1,3 @@
 <template>
-  <li> <slot /> </li>
+  <li class="dropdown-item"> <slot /> </li>
 </template>
