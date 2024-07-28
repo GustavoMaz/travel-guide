@@ -1,10 +1,12 @@
 <template>
-<div @click="toggleDropdown">
-  <slot name="title"  />
+<div @mouseover="isMouseOver = true" @mouseleave="isMouseOver = false">
+  <div @click="toggleDropdown">
+    <slot name="title" />
+  </div>
+  <ul :class="`dropdown level-${subMenuLevel}`" v-if="showDropdown || isMouseOver">
+    <slot />
+  </ul>
 </div>
-<ul :class="`dropdown level-${subMenuLevel}`" v-if="showDropdown">
-  <slot />
-</ul>
 </template>
 
 <script>
@@ -22,15 +24,21 @@ export default {
     const showDropdown = ref(false);
     const toggleDropdown = () => {
       showDropdown.value = !showDropdown.value;
-      };
+    };
+
+    const isMouseOver = ref(false);
+    /*
+    const mouseLeaveHandler = () => {setTimeout(() => {
+      isMouseOver.value = false;
+    }, 500)}
+    */
+
     return {
       showDropdown,
-      toggleDropdown
+      toggleDropdown,
+      isMouseOver
+      // mouseLeaveHandler
     }
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -4,7 +4,6 @@
     <div class="logo">LOGO</div>
     <ul class="nav-list">
       <li class="nav-item"><a href="#">Ínicio</a></li>
-      <li class="nav-item"><RouterLink to="/about">Sobre nós</RouterLink></li>
       <li class="nav-item">
         <DropDown>
           <template v-slot:title>
@@ -27,6 +26,7 @@
           </DropDownItem>
         </DropDown>
       </li>
+      <li class="nav-item"><RouterLink to="/about">Sobre nós</RouterLink></li>
       <li class="nav-item search-bar">
         <div class="search-icon-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--text-primary)" class="bi bi-search search-icon" viewBox="0 0 16 16">
@@ -63,6 +63,7 @@ export default {
   white-space: nowrap;
   position: sticky;
   top: 0;
+  border-bottom: 1px solid var(--light-primary);
 }
 
 #main-navigation ul {
@@ -122,17 +123,20 @@ export default {
 }
 
 .dropdown {
-  background-color: var(--bg-color);
-  padding: 1.5rem;
+  background-color: var(--light-primary);
+  padding: 1.2rem 1.5rem;
   position: absolute;
   width: 11rem;
   box-sizing: border-box;
   border-radius: 16px;
 }
 
-.dropdown .dropdown-item a { 
-  margin: 0;
+.dropdown li a { 
   color: var(--text-primary);
+}
+
+.dropdown li {
+  margin-left: 0;
 }
 
 .dropdown li:not(:last-of-type) {
@@ -140,16 +144,7 @@ export default {
 }
 
 .dropdown.level-1 {
-  left: 11rem;
+  left: calc(11rem - 3rem);
+  top: -1rem;
 }
-
-/*
-.search-icon-wrapper {
-  width: 3.5rem;
-  height: 2.75rem;
-  background-color: var(--primary);
-  border-radius: 16px 0 0 16px;
-}
-*/
-
 </style>
