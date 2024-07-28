@@ -3,26 +3,6 @@
 
 <TheHeader></TheHeader>
 
-<nav id="section-navigation" class="section-navigation">
-  <ul>
-    <li>
-      <RouterLink to="/">Cultura</RouterLink> 
-    </li>
-    
-    <li>
-      <RouterLink to="/gastronomy">Gastronomia</RouterLink> 
-    </li>
-    
-    <li>
-      <RouterLink to="/nature">Natureza</RouterLink> 
-    </li>
-    
-    <li>
-      <RouterLink to="/sports">Esportes</RouterLink> 
-    </li>
-  </ul>
-</nav>
-
 <main>
   <RouterView />
 </main>

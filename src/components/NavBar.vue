@@ -64,6 +64,7 @@ export default {
   position: sticky;
   top: 0;
   border-bottom: 1px solid var(--light-primary);
+  z-index: 999;
 }
 
 #main-navigation ul {

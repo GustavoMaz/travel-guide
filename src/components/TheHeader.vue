@@ -5,12 +5,20 @@
       <h1>Descubra o mundo com a gente.</h1>
       <button class="main-action-button bg-white">Reserve a sua aventura agora</button>
     </div>
+    
+    <SectionNavigation />
   </header>
 </template>
 
 <script>
 import { ref, onMounted } from 'vue';
+import SectionNavigation from '@/components/SectionNavigation.vue';
+
 export default {
+  components: {
+    SectionNavigation
+  },
+
   setup() {
     const headerBgImg = ref(1);
 
@@ -48,11 +56,14 @@ export default {
 header {
   height: 80vh;
   width: 100%;
+  box-sizing: border-box;
   position: relative;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   box-shadow: inset 0 0 80px 40px var(--shadow-color);
   overflow: hidden;
+  padding: 0 4rem
 }
 
 div.bg-img {
@@ -85,8 +96,9 @@ header .bg-img-3 {
 
 header .container {
   position: relative;
+  top: 25%;
   z-index: 1;
-  margin-left: 5vw;
+  padding: 0;
 }
 
 header h1 {
