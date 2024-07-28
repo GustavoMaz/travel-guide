@@ -114,7 +114,6 @@ export default {
   color: var(--text-primary);
 }
 
-
 .nav-item a {
   text-decoration: none;
   color: var(--primary);
@@ -123,7 +122,7 @@ export default {
 }
 
 .dropdown {
-  background-color: var(--light-primary);
+  background-color: var(--dark-bg-color);
   padding: 1.2rem 1.5rem;
   position: absolute;
   width: 11rem;

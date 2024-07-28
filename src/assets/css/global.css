@@ -4,6 +4,7 @@
 :root {
   /* Paleta de cores */
   --bg-color: #FFFFFF;
+  --dark-bg-color: #f5f5f5;
   --primary: #00BCD4;
   --dark-primary: #0097a7;
   --light-primary: #B2EBF2;
@@ -29,7 +30,9 @@
 }
 
 .container {
+  box-sizing: border-box;
   max-width: 1440px;
+  padding: 0 2rem;
 }
 
 h1, h2 { font-weight: 700; }
@@ -50,10 +53,11 @@ h3 {
 .main-action-button {
   border-radius: 16px;
   color: var(--bg-color);
-  padding: 0.59375rem;
+  padding: 1rem 0.59375rem;
   font-weight: bold;
   border: none;
   background-color: var(--primary);
+  font-size: 1rem;
 }
 
 .main-action-button:hover {
@@ -75,6 +79,7 @@ h3 {
 
 .main-action-button.bg-accent {
   background-color: var(--accent);
+  padding: 0.59375rem;
 }
 
 .main-action-button.bg-accent:hover {
