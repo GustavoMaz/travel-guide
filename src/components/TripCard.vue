@@ -1,37 +1,44 @@
 <template>
-<article>
-    <RouterLink>
+<RouterLink>
+  <article class="card">
       <img 
         :src="imgSrc"
         :alt="imgAlt"
+        class="thumbnail"
       >
-      <div class="classifier">
-        <slot name="classifier" />
+      <div class="text-box">
+        <div class="classifier">
+          <slot name="classifier" />
+        </div>
+        <h3>
+          <slot name="title" />
+        </h3>
+        <div class="rating">
+          <div class="stars">
+            <img
+              src="@/assets/rating/star.png"
+              v-for="star in Math.floor(rating)"
+              :key="star"
+              class="rating-star"
+            >
+            <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
+            <img src="@/assets/rating/empty-star.png"
+              v-for="star in emptyStars"
+              :key="star"
+              class="rating-star"
+            >
+          </div>
+          <span class="rating">
+            {{ rating }} / 5 (<slot name="amountOfRatings" />)
+          </span>
+        </div>
+        <p class="price">
+          A partir de R$<slot name="price" /> por pessoa
+        </p>
       </div>
-      <h3>
-        <slot name="title" />
-      </h3>
-      <div class="rating">
-        <img 
-          src="@/assets/rating/star.png" 
-          v-for="star in Math.floor(rating)"
-          :key="star"
-        >
-        <img src="@/assets/rating/half-star.png" v-if="hasHalfStar">
-        <img src="@/assets/rating/empty-star.png" 
-          v-for="star in emptyStars"
-          :key="star"
-        >
-        <span>
-          {{ rating }} / 5 (<slot name="amountOfRatings" />)
-        </span>
-      </div>
-      <p>
-        A partir de R$<slot name="price" /> <span>por pessoa</span>
-      </p>
-    </RouterLink>
-  </article>
-  </template>
+    </article>
+  </RouterLink>
+</template>
 
 <script>
 //import { computed } from 'vue';
@@ -73,3 +80,63 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+  display: inline;
+  width: fit-content;
+}
+
+.card {
+  border-radius: 16px;
+  border: 2px solid var(--dark-bg-color);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 288px;
+  color: var(--text-primary);
+}
+
+img.thumbnail {
+  height: 288px;
+  width: 288px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 16px solid var(--primary);
+  margin-bottom: var(--m-bottom-s);
+}
+
+.text-box {
+  padding: 0 1rem 1rem;
+  max-width: 288px;
+  box-sizing: border-box;
+}
+
+.classifier {
+  color: var(--text-secondary);
+  margin-bottom: var(--m-bottom-s);
+}
+
+h3 {
+  margin-bottom: var(--m-bottom-m);
+}
+
+div.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--m-bottom-s);
+}
+
+.rating-star {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+span.rating {
+  margin-left: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+</style>

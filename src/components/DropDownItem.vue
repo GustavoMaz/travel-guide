@@ -1,7 +1,7 @@
 <template>
   <li class="dropdown-item nav-item"> 
-    <RouterLink class="anchor">
+    <RouterLink>
       <slot />
-    </RouterLink> 
+    </RouterLink>
   </li>
 </template>
