@@ -96,6 +96,13 @@ a {
   flex-wrap: nowrap;
   max-width: 288px;
   color: var(--text-primary);
+  overflow: hidden;
+  
+}
+
+.card:hover img.thumbnail {
+  transform: scale(1.1);
+  position: relative;
 }
 
 img.thumbnail {
@@ -103,14 +110,15 @@ img.thumbnail {
   width: 288px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
-  border-bottom: 16px solid var(--primary);
-  margin-bottom: var(--m-bottom-s);
+  transition: .3s ease;
 }
 
 .text-box {
-  padding: 0 1rem 1rem;
+  border-top: 16px solid var(--primary);
+  padding: var(--m-bottom-s) 1rem 1rem;
   max-width: 288px;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .classifier {

@@ -22,6 +22,64 @@
     <template v-slot:amountOfRatings>2090</template>
     <template v-slot:price>99,90</template>
   </TripCard>
+
+  <TripCard
+    rating="4.8"
+    img="david-sculpture.jpg"
+    imgAlt="Escultura de Davi"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:amountOfRatings>1680</template>
+    <template v-slot:price>168,00</template>
+  </TripCard>
+
+  <TripCard
+    rating="4.8"
+    img="david-sculpture.jpg"
+    imgAlt="Escultura de Davi"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:amountOfRatings>1680</template>
+    <template v-slot:price>168,00</template>
+  </TripCard>
+
+  <TripCard
+    rating="4.8"
+    img="david-sculpture.jpg"
+    imgAlt="Escultura de Davi"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:amountOfRatings>1680</template>
+    <template v-slot:price>168,00</template>
+  </TripCard>
+
+  <TripCard
+    rating="4.8"
+    img="david-sculpture.jpg"
+    imgAlt="Escultura de Davi"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:amountOfRatings>1680</template>
+    <template v-slot:price>168,00</template>
+  </TripCard>
+
+  <TripCard
+    rating="4.8"
+    img="david-sculpture.jpg"
+    imgAlt="Escultura de Davi"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:amountOfRatings>1680</template>
+    <template v-slot:price>168,00</template>
+  </TripCard>
+
+
+
 </ContentSection>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
-<ContentSection id="culture">
-  <template v-slot:subtitleFiller>culturais</template>
+<ContentSection id="sports">
+  <template v-slot:subtitleFiller>esportivas</template>
   <TripCard
     rating="4.5"
     img="liverpool.jpg"

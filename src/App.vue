@@ -1,14 +1,11 @@
 <template>
 <NavBar></NavBar>
-
 <TheHeader></TheHeader>
-
 <main>
   <RouterView />
 </main>
 
 <TheFooter></TheFooter>
-
 </template>
 
 <script>
