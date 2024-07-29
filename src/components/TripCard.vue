@@ -6,35 +6,42 @@
         :alt="imgAlt"
         class="thumbnail"
       >
-      <div class="text-box">
-        <div class="classifier">
-          <slot name="classifier" />
+
+      <div class="card-text">
+        
+        <div class="text-box">
+          <div class="classifier">
+            <slot name="classifier" />
+          </div>
+          <h3>
+            <slot name="title" />
+          </h3>
         </div>
-        <h3>
-          <slot name="title" />
-        </h3>
-        <div class="rating">
-          <div class="stars">
-            <img
-              src="@/assets/rating/star.png"
-              v-for="star in Math.floor(rating)"
-              :key="star"
-              class="rating-star"
-            >
+        
+        <div class="rating-container">
+          <div class="rating">
+            <div class="stars">
+              <img
+                src="@/assets/rating/star.png"
+                v-for="star in Math.floor(rating)"
+                :key="star"
+                class="rating-star"
+              >
             <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
             <img src="@/assets/rating/empty-star.png"
               v-for="star in emptyStars"
               :key="star"
               class="rating-star"
             >
+            </div>
+              <span class="rating">
+                {{ rating }} / 5 (<slot name="amountOfRatings" />)
+              </span>
+            </div>
+            <p class="price">
+              A partir de R$<slot name="price" /> por pessoa
+            </p>
           </div>
-          <span class="rating">
-            {{ rating }} / 5 (<slot name="amountOfRatings" />)
-          </span>
-        </div>
-        <p class="price">
-          A partir de R$<slot name="price" /> por pessoa
-        </p>
       </div>
     </RouterLink>
   </article>
@@ -84,16 +91,19 @@ export default {
 <style scoped>
 article {
   margin: 0 2vw var(--m-bottom-l);
+  
 }
 
 .card {
   border-radius: 16px;
-  border: 2px solid var(--dark-bg-color);
+  /*border: 2px solid var(--dark-bg-color);*/
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   color: var(--text-primary);
   overflow: hidden;
+  box-shadow: 0 4px 4px var(--shadow-color);
+  height: 100%;
 }
 
 .card:hover img.thumbnail {
@@ -107,11 +117,23 @@ img.thumbnail {
   transition: .3s ease;
 }
 
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .text-box {
   border-top: 16px solid var(--primary);
-  padding: var(--m-bottom-s) 1rem 1rem;
+  padding: var(--m-bottom-s) 1rem 0;
   box-sizing: border-box;
   z-index: 1;
+}
+
+.rating-container {
+  padding: 0 1rem 1rem;
+  box-sizing: border-box;
 }
 
 .classifier {
@@ -126,8 +148,8 @@ h3 {
 div.rating {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--m-bottom-s);
+  justify-content: flex-start;
+  /*margin-bottom: var(--m-bottom-s);*/
 }
 
 .rating-star {

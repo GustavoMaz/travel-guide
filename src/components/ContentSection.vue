@@ -35,4 +35,14 @@ section > div {
   */
 }
 
+@media only screen and (max-width: 700px) {
+  section > div {
+    grid-template-columns: 1fr;
+  }
+
+  article {
+    width: 100%;
+  }
+}
+
 </style>
