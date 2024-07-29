@@ -24,9 +24,9 @@ section {
 
 section > div {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 288px);
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
   justify-items: center;
-  grid-gap: 1.5rem;
+  column-gap: 2vw;
   margin: auto;
   /*
   display: flex;

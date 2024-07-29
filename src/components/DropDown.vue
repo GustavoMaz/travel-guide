@@ -1,7 +1,7 @@
 <template>
 <div @mouseover="isMouseOver = true" @mouseleave="isMouseOver = false">
-  <div @click="toggleDropdown">
-    <slot name="title" />
+  <div @click="toggleDropdown" class="dropdown-title">
+    <slot name="title" /> 
   </div>
   <ul :class="`dropdown level-${subMenuLevel}`" v-if="showDropdown || isMouseOver">
     <slot />

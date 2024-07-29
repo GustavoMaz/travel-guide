@@ -65,11 +65,8 @@ export default {
   top: 0;
   border-bottom: 1px solid var(--light-primary);
   z-index: 999;
-}
-
-#main-navigation ul {
-  list-style: none;
   padding: 0.5rem 2rem;
+  box-sizing: border-box;
 }
 
 #main-navigation .container {
@@ -94,6 +91,10 @@ export default {
 .nav-item {
   margin-left: 2vw;
   position: relative;
+}
+
+.dropdown-title a {
+  line-height: 19px;
 }
 
 .search-bar {

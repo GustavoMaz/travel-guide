@@ -102,7 +102,6 @@ article {
 
 img.thumbnail {
   height: 288px;
-  width: 288px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
   transition: .3s ease;
@@ -111,7 +110,6 @@ img.thumbnail {
 .text-box {
   border-top: 16px solid var(--primary);
   padding: var(--m-bottom-s) 1rem 1rem;
-  max-width: 288px;
   box-sizing: border-box;
   z-index: 1;
 }
