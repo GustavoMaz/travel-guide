@@ -1,6 +1,6 @@
 <template>
-<RouterLink>
-  <article class="card">
+<article>
+  <RouterLink class="card">
       <img 
         :src="imgSrc"
         :alt="imgAlt"
@@ -36,8 +36,8 @@
           A partir de R$<slot name="price" /> por pessoa
         </p>
       </div>
-    </article>
-  </RouterLink>
+    </RouterLink>
+  </article>
 </template>
 
 <script>
@@ -82,10 +82,8 @@ export default {
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
-  display: inline;
-  width: fit-content;
+article {
+  margin: 0 2vw var(--m-bottom-l);
 }
 
 .card {
@@ -94,15 +92,12 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  max-width: 288px;
   color: var(--text-primary);
   overflow: hidden;
-  
 }
 
 .card:hover img.thumbnail {
   transform: scale(1.1);
-  position: relative;
 }
 
 img.thumbnail {

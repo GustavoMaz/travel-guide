@@ -16,3 +16,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+img {
+  background-color: #FFF;
+  border-radius: 8px;
+  padding: 4px;
+  height: 1.5rem;
+  width: 3rem;
+  object-fit: contain;
+}
+</style>

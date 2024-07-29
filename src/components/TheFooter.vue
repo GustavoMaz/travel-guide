@@ -1,9 +1,9 @@
 <template>
 <footer>
   <nav>
-    <ul>
+    <ul class="nav-list">
       <li>
-        <div>
+        <div id="suport">
           <h2>Suporte</h2>
           <ul>
             <li><RouterLink to="#">Contato</RouterLink></li>
@@ -14,17 +14,17 @@
         </div>
       </li>
       <li>
-        <div>
+        <div id="socials">
           <h2>Redes sociais</h2>
           <ul>
-            <li><RouterLink to="https://www.instagram.com/" rel="external"><img src="#" alt="Instagram" title="Instagram"></RouterLink></li>
-            <li><RouterLink to="https://www.x.com/" rel="external"><img src="#" alt="X" title="X"></RouterLink></li>
-            <li><RouterLink to="https://www.facebook.com/" rel="external"><img src="#" alt="Facebook" title="Facebook"></RouterLink></li>
+            <li><RouterLink to="https://www.instagram.com/" rel="external"><img src="../assets/socials/instagram.png" alt="Instagram" title="Instagram"></RouterLink></li>
+            <li><RouterLink to="https://www.x.com/" rel="external"><img src="../assets/socials/x.png" alt="X" title="X"></RouterLink></li>
+            <li><RouterLink to="https://www.facebook.com/" rel="external"><img src="../assets/socials/facebook.png" alt="Facebook" title="Facebook"></RouterLink></li>
           </ul>
         </div>
       </li>
       <li>
-        <div>
+        <div id="company">
           <h2>Empresa</h2>
           <ul>
             <li><RouterLink to="#">Quem somos</RouterLink></li>
@@ -34,7 +34,7 @@
         </div>
       </li>
       <li>
-        <div>
+        <div id="payment">
           <h2>Formas de pagamento</h2>
           <ul>
             <li><PaymentIcon img="mastercard" title="Mastercad" /></li>
@@ -48,16 +48,21 @@
       </li>
 
       <li>
-        <div>
+        <div id="credits">
           <h2>Créditos</h2>
-          <a href="https://www.flaticon.com/br/icones-gratis/lupa" rel="external">Ícone de lupa criado por Ayub Irawan - Flaticon</a>
-          <a href="https://www.flaticon.com/br/icones-gratis/estrela" rel="external">Ícone de estrela criado por Revicon - Flaticon</a>
+          <ul>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/lupa" rel="external">Ícone de lupa criado por Ayub Irawan - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/estrela" rel="external">Ícone de estrela criado por Revicon - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/logotipo-do-instagram" rel="external">Ícone Instagram criado por Freepik - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/tweet" rel="external">Ícone X (Twitter) criado por Freepik - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/facebook" rel="external">Ícone Facebook criado por Freepik - Flaticon</a></li>
+          </ul>
         </div>
       </li>
 
-      <li><p>&copy; 2024 - Nome da empresa. RS, Brasil</p></li>
     </ul>
   </nav>
+  <p>&copy; 2024 - Nome da empresa. RS, Brasil</p>
 </footer>
 </template>
 
@@ -70,3 +75,55 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+footer {
+  background-color: var(--dark-primary);
+  color: var(--bg-color);
+  padding: 1.75rem 2rem;
+}
+
+nav ul.nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--m-bottom-l);
+}
+
+div ul, #credits {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+li:has(> #credits) {
+  grid-column: span 2;
+}
+
+#socials ul, #payment ul {
+  display: flex;
+  gap: 1rem;
+}
+
+#socials ul li a:hover {
+  transform: scale(1.1);
+  filter: brightness(200);
+}
+
+a {
+  color: var(--light-primary);
+  display: inline-block;
+  margin-bottom: var(--m-bottom-s);
+  width: fit-content;
+  transition: .2s;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: var(--m-bottom-xs);
+}
+
+a:hover {
+  color: var(--bg-color);
+}
+
+</style>

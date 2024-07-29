@@ -22,6 +22,8 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  max-width: 1920px;
+  margin: 0 auto;
   width: 100%;
   list-style: none;
   z-index: 2;
@@ -33,7 +35,6 @@ a {
   width: 12rem;
   padding: 2rem;
   text-align: center;
-  text-decoration: none;
   font-weight: bold;
   color: var(--primary);
 }

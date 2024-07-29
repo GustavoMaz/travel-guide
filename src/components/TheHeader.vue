@@ -98,7 +98,7 @@ header .container {
   position: relative;
   top: 25%;
   z-index: 1;
-  padding: 0;
+  padding: 0 2rem;
 }
 
 header h1 {

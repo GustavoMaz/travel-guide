@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2 class="section-title">Experiências <slot name="subtitleFiller" /> inesquecíveis.</h2>
-    <div class="container">
+    <div>
       <slot />
     </div>
   </section>
@@ -15,18 +15,24 @@ section {
 }
 
 .section-title {
-  margin-bottom: var(--m-bottom-m);
+  margin: 0 auto var(--m-bottom-m);
 }
 
 /*.section-title span {
   color: var(--dark-primary);
 }*/
 
-section .container {
+section > div {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, 288px);
   justify-items: center;
+  grid-gap: 1.5rem;
   margin: auto;
+  /*
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  */
 }
 
 </style>

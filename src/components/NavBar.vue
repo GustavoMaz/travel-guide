@@ -69,12 +69,12 @@ export default {
 
 #main-navigation ul {
   list-style: none;
+  padding: 0.5rem 2rem;
 }
 
 #main-navigation .container {
-  box-sizing: border-box;
-  min-width: 100%;
-  padding: 0.5rem 2rem;
+  margin: auto;  
+  width: 100%;
 }
 
 .search-bar, 
@@ -92,7 +92,7 @@ export default {
 }
 
 .nav-item {
-  margin-left: 4vw;
+  margin-left: 2vw;
   position: relative;
 }
 
@@ -116,7 +116,7 @@ export default {
 }
 
 .nav-item a {
-  text-decoration: none;
+  
   color: var(--primary);
   font-weight: 500;
   display: block;
