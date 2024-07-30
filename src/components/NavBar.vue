@@ -1,6 +1,9 @@
 <template>
 <nav id="main-navigation">
   <div class="container">
+    <button class="menu-toggle" @click="toggleMenu">
+      <img src="../assets/menu.png" class="menu-img">
+    </button>
     <a href="#"><img src="../assets/logo.png" class="logo"></a>
     <ul class="nav-list">
       <li class="nav-item"><a href="#">Ínicio</a></li>
@@ -51,6 +54,18 @@ export default {
   components: {
     DropDown,
     DropDownItem
+  },
+
+  setup() {
+
+    const toggleMenu = () => {
+      const menu = document.querySelector('#main-navigation .nav-list');
+      menu.classList.toggle('active');
+    }
+
+    return {
+      toggleMenu
+    }
   }
 }
 </script>
@@ -85,6 +100,10 @@ export default {
 .logo, a:has(> .logo) {
   height: 3.25rem;
   aspect-ratio: 1 / 1;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .nav-list {
@@ -122,7 +141,6 @@ export default {
 }
 
 .nav-item a {
-  
   color: var(--primary);
   font-weight: 500;
   display: block;
@@ -164,4 +182,52 @@ export default {
   left: calc(11rem - 3rem);
   top: -1rem;
 }
+
+@media only screen and (max-width: 765px) {
+  .search-bar {
+    display: none;
+  }
+
+  #main-navigation .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 100vh;
+    top: 68px;
+    left: -300px;
+    width: 237px;
+    box-sizing: border-box;
+    background-color: var(--bg-color);
+    padding: 1rem 2rem 2rem 1rem;
+    transition: .2s;
+  }
+
+  #main-navigation .nav-list.active {
+    left: 0;
+  }
+  
+  #main-navigation .nav-item {
+    margin-bottom: var(--m-bottom-m);
+  }
+  
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+
+
+  .dropdown {
+    position: static;
+    border: none;
+    list-style-type: disc;
+    
+  }
+
+  .dropdown, .dropdown li a {
+    color: var(--text-secondary);
+  }
+}
+
 </style>

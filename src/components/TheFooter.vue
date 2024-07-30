@@ -56,6 +56,8 @@
             <li><a href="https://www.flaticon.com/br/icones-gratis/logotipo-do-instagram" rel="external">Ícone Instagram criado por Freepik - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/tweet" rel="external">Ícone X (Twitter) criado por Freepik - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/facebook" rel="external">Ícone Facebook criado por Freepik - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/icones-gratis/menu-aberto" rel="external">Ícone de menu criado por Ilham Fitrotul Hayat - Flaticon</a></li>
+            <li>Imagens - <a href="https://www.pexels.com" rel="external">Pexels</a>, <a href="https://www.getyourguide.com" rel="external">GetYouGuide</a></li>
           </ul>
         </div>
       </li>
@@ -99,13 +101,23 @@ li:has(> #credits) {
   grid-column: span 2;
 }
 
-#socials ul, #payment ul {
+#socials ul{
   display: flex;
   gap: 1rem;
 }
 
 #socials ul li a:hover {
   transform: scale(1.1);
+}
+
+#payment ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+#payment ul li {
+  width: fit-content;
 }
 
 a {
