@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div v-for="index in 3" :key="index" :class="`bg-img bg-img-${index}`" :style="{ opacity: headerBgImg === index ? 1 : 0 }"></div>
+    <img v-for="index in 3" :key="index" :src="headerImages[index - 1]" :style="{ opacity: headerBgImg === index ? 1 : 0 }" class="bg-img" />
     <div class="container">
       <h1>Descubra o mundo com a gente.</h1>
       <button class="main-action-button bg-white">Reserve a sua aventura agora</button>
@@ -21,6 +21,11 @@ export default {
 
   setup() {
     const headerBgImg = ref(1);
+    const headerImages = [
+      require('../assets/header/eiffel-tower.jpg'),
+      require('../assets/header/greece.jpg'),
+      require('../assets/header/pisa-tower.jpg')
+    ];
 
     const preloadImages = (imageArray) => {
       imageArray.forEach((src) => {
@@ -30,11 +35,7 @@ export default {
     };
 
     onMounted(() => {
-      preloadImages([
-        '../assets/header/eiffel-tower.jpg',
-        '../assets/header/greece.jpg',
-        '../assets/header/pisa-tower.jpg',
-      ]);
+      preloadImages(headerImages);
 
       const changeBgImg = () => {
         setTimeout(() => {
@@ -47,6 +48,7 @@ export default {
 
     return {
       headerBgImg,
+      headerImages
     };
   },
 };
@@ -54,7 +56,7 @@ export default {
 
 <style>
 header {
-  height: 80vh;
+  height: 70vh;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -63,10 +65,10 @@ header {
   flex-direction: column;
   box-shadow: inset 0 0 80px 40px var(--shadow-color);
   overflow: hidden;
-  padding: 0 4rem
+  padding: 0 4rem; 
 }
 
-div.bg-img {
+.bg-img {
   filter: brightness(60%);
 }
 
@@ -76,22 +78,9 @@ header .bg-img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-position: 0 -10vw;
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
   transition: opacity 1s ease-in-out;
-}
-
-header .bg-img-1 {
-  background-image: url('../assets/header/eiffel-tower.jpg');
-}
-
-header .bg-img-2 {
-  background-image: url('../assets/header/greece.jpg');
-}
-
-header .bg-img-3 {
-  background-image: url('../assets/header/pisa-tower.jpg');
+  background-color: var(--shadow-color);
 }
 
 header .container {
@@ -102,7 +91,7 @@ header .container {
 }
 
 header h1 {
-  max-width: 40vw;
+  max-width: 650px;
   color: var(--bg-color);
   text-shadow: 0 2px 8px var(--shadow-color);
   margin-bottom: var(--m-bottom-xl);

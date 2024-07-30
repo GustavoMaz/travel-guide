@@ -1,7 +1,7 @@
 <template>
 <nav id="main-navigation">
   <div class="container">
-    <div class="logo">LOGO</div>
+    <a href="#"><img src="../assets/logo.png" class="logo"></a>
     <ul class="nav-list">
       <li class="nav-item"><a href="#">Ínicio</a></li>
       <li class="nav-item">
@@ -82,6 +82,11 @@ export default {
   align-items: center;
 }
 
+.logo, a:has(> .logo) {
+  height: 3.25rem;
+  aspect-ratio: 1 / 1;
+}
+
 .nav-list {
   display: flex;
   flex-wrap: nowrap;
@@ -124,7 +129,8 @@ export default {
 }
 
 .dropdown {
-  background-color: var(--dark-bg-color);
+  background-color: var(--bg-color);
+  border: 2px solid var(--alternative-bg-color);
   padding: 1.2rem 1.5rem;
   position: absolute;
   width: 11rem;
@@ -142,6 +148,16 @@ export default {
 
 .dropdown li:not(:last-of-type) {
   margin-bottom: var(--m-bottom-m);
+}
+
+.dropdown li:not(:last-of-type)::after {
+  background-color: var(--alternative-bg-color); 
+  width: 8rem;
+  height: 1px;
+  content: ' ';
+  position: absolute;
+  /*top: var(--m-bottom-xs);*/
+  bottom: -50%;
 }
 
 .dropdown.level-1 {

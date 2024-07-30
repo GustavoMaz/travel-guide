@@ -104,6 +104,7 @@ article {
   overflow: hidden;
   box-shadow: 0 4px 4px var(--shadow-color);
   height: 100%;
+  width: 100%;
 }
 
 .card:hover img.thumbnail {
@@ -111,6 +112,7 @@ article {
 }
 
 img.thumbnail {
+  min-width: 288px;
   height: 288px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;

@@ -24,62 +24,17 @@
   </TripCard>
 
   <TripCard
-    rating="4.8"
-    img="david-sculpture.jpg"
-    imgAlt="Escultura de Davi"
+    rating="4.5"
+    img="missing.jpg"
+    imgAlt=""
+    v-for="index in 8"
+    :key="index"
   >
-    <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
+    <template v-slot:classifier>Lorem Ipsum</template>
+    <template v-slot:title>Lorem ipsum dolor sit amet consectetur adipisicing elit</template>
     <template v-slot:amountOfRatings>1680</template>
-    <template v-slot:price>168,00</template>
+    <template v-slot:price>150,00</template>
   </TripCard>
-
-  <TripCard
-    rating="4.8"
-    img="david-sculpture.jpg"
-    imgAlt="Escultura de Davi"
-  >
-    <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
-    <template v-slot:amountOfRatings>1680</template>
-    <template v-slot:price>168,00</template>
-  </TripCard>
-
-  <TripCard
-    rating="4.8"
-    img="david-sculpture.jpg"
-    imgAlt="Escultura de Davi"
-  >
-    <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
-    <template v-slot:amountOfRatings>1680</template>
-    <template v-slot:price>168,00</template>
-  </TripCard>
-
-  <TripCard
-    rating="4.8"
-    img="david-sculpture.jpg"
-    imgAlt="Escultura de Davi"
-  >
-    <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
-    <template v-slot:amountOfRatings>1680</template>
-    <template v-slot:price>168,00</template>
-  </TripCard>
-
-  <TripCard
-    rating="4.8"
-    img="david-sculpture.jpg"
-    imgAlt="Escultura de Davi"
-  >
-    <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Galeria da Academia de Belas Artes de Florença</template>
-    <template v-slot:amountOfRatings>1680</template>
-    <template v-slot:price>168,00</template>
-  </TripCard>
-
-
-
 </ContentSection>
 </template>
 

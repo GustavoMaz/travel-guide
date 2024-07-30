@@ -20,5 +20,4 @@ export default {
     TheFooter
   }
 }
-
 </script>
