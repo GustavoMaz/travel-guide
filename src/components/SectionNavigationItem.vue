@@ -16,7 +16,7 @@ export default {
     selected: {
       type: Boolean,
       default: false
-    }
+    },
   },
   
   setup(props) {

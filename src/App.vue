@@ -1,11 +1,13 @@
 <template>
 <NavBar></NavBar>
-<TheHeader></TheHeader>
-<main>
-  <RouterView />
-</main>
-
-<TheFooter></TheFooter>
+<div @click="disableMenu">
+  <TheHeader></TheHeader>
+  <main id="page-view">
+    <RouterView />
+  </main>
+  
+  <TheFooter></TheFooter>
+</div>
 </template>
 
 <script>
@@ -18,6 +20,19 @@ export default {
     NavBar,
     TheHeader,
     TheFooter
+  },
+
+  setup() {
+    document.title = 'Guia de Viajem';
+
+    const disableMenu = () => {
+      const menu = document.querySelector('#main-navigation .nav-list');
+      menu.classList.remove('active');
+    }
+
+    return {
+      disableMenu
+    }
   }
 }
 </script>

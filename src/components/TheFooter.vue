@@ -57,6 +57,7 @@
             <li><a href="https://www.flaticon.com/br/icones-gratis/tweet" rel="external">Ícone X (Twitter) criado por Freepik - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/facebook" rel="external">Ícone Facebook criado por Freepik - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/menu-aberto" rel="external">Ícone de menu criado por Ilham Fitrotul Hayat - Flaticon</a></li>
+            <li><a href="https://www.flaticon.com/br/autores/pause08" rel="external">Ícones de livro, montanha, prato e bicicleta criados por Pause08 - Flaticon</a></li>
             <li>Imagens - <a href="https://www.pexels.com" rel="external">Pexels</a>, <a href="https://www.getyourguide.com" rel="external">GetYouGuide</a></li>
           </ul>
         </div>
@@ -64,7 +65,7 @@
 
     </ul>
   </nav>
-  <p>&copy; 2024 - Nome da empresa. RS, Brasil</p>
+  <p>&copy; 2024 - Guia de Viajem | RS, Brasil</p>
 </footer>
 </template>
 
@@ -87,8 +88,9 @@ footer {
 
 nav ul.nav-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, 1fr);
   gap: var(--m-bottom-l);
+  margin-bottom: var(--m-bottom-l);
 }
 
 div ul, #credits {
@@ -119,6 +121,8 @@ li:has(> #credits) {
 #payment ul li {
   width: fit-content;
 }
+
+li { color: var(--light-primary); }
 
 a {
   color: var(--light-primary);

@@ -217,7 +217,6 @@ export default {
     border: none;
   }
 
-
   .dropdown {
     position: static;
     border: none;

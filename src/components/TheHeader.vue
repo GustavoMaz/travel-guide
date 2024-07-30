@@ -3,7 +3,7 @@
     <img v-for="index in 3" :key="index" :src="headerImages[index - 1]" :style="{ opacity: headerBgImg === index ? 1 : 0 }" class="bg-img" />
     <div class="container">
       <h1>Descubra o mundo com a gente.</h1>
-      <button class="main-action-button bg-white">Reserve a sua aventura agora</button>
+      <a href="#page-view" class="main-action-button bg-white">Reserve a sua aventura agora</a>
     </div>
     
     <SectionNavigation />
