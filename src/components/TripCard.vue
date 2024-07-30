@@ -91,7 +91,7 @@ export default {
 <style scoped>
 article {
   margin: 0 2vw var(--m-bottom-l);
-  
+  width: 100%;
 }
 
 .card {
@@ -104,7 +104,8 @@ article {
   overflow: hidden;
   box-shadow: 0 4px 4px var(--shadow-color);
   height: 100%;
-  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .card:hover img.thumbnail {
@@ -113,7 +114,8 @@ article {
 
 img.thumbnail {
   min-width: 288px;
-  height: 288px;
+  min-height: 288px;
+  max-height: 288px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
   transition: .3s ease;

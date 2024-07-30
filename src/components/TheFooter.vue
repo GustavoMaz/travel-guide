@@ -106,7 +106,6 @@ li:has(> #credits) {
 
 #socials ul li a:hover {
   transform: scale(1.1);
-  filter: brightness(200);
 }
 
 a {

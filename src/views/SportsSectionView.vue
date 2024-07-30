@@ -22,6 +22,18 @@
     <template v-slot:amountOfRatings>1305</template>
     <template v-slot:price>59,90</template>
   </TripCard>
+
+  <TripCard
+    rating="4.3"
+    img="boat-rowing.jpg"
+    imgAlt="Grupo de pessoas remando barco"
+  >
+    <template v-slot:classifier>Tour guiado</template>
+    <template v-slot:title>Roma: Passeio de Rafting Urbano no Rio Tibre com Pizza Romana</template>
+    <template v-slot:amountOfRatings>1305</template>
+    <template v-slot:price>80,00</template>
+  </TripCard>
+
 </ContentSection>
 </template>
 
