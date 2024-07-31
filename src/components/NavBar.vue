@@ -4,7 +4,7 @@
     <button class="menu-toggle" @click="toggleMenu">
       <img src="../assets/menu.png" class="menu-img">
     </button>
-    <a href="#"><img src="../assets/logo.png" class="logo"></a>
+    <RouterLink to="/"><img src="../assets/logo.png" class="logo"></RouterLink>
     <ul class="nav-list">
       <li class="nav-item"><RouterLink to="/">Ínicio</RouterLink></li>
       <li class="nav-item">

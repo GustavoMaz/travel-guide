@@ -1,5 +1,5 @@
 <template>
-<div @mouseover="isMouseOver = true" @mouseleave="isMouseOver = false">
+<div @mouseover="mouseOverHandler" @mouseleave="isMouseOver = false">
   <div @click="toggleDropdown" class="dropdown-title">
     <slot name="title" /> 
   </div>
@@ -27,6 +27,11 @@ export default {
     };
 
     const isMouseOver = ref(false);
+
+    const mouseOverHandler = () => {
+      isMouseOver.value = window.innerWidth > 765;
+    }
+
     /*
     const mouseLeaveHandler = () => {setTimeout(() => {
       isMouseOver.value = false;
@@ -36,7 +41,8 @@ export default {
     return {
       showDropdown,
       toggleDropdown,
-      isMouseOver
+      isMouseOver,
+      mouseOverHandler
       // mouseLeaveHandler
     }
   }

@@ -1,6 +1,17 @@
 <template>
-<article>
-  <RouterLink class="card">
+  <article>
+    <RouterLink 
+      class="card" 
+      :to="{
+        path: `/${convertTitleToKebab}`,
+        query: {
+          img: img,
+          imgAlt: imgAlt,
+          rating: rating,
+          title: title
+        }
+      }"
+    >
       <img 
         :src="imgSrc"
         :alt="imgAlt"
@@ -8,16 +19,12 @@
       >
 
       <div class="card-text">
-        
         <div class="text-box">
           <div class="classifier">
             <slot name="classifier" />
           </div>
-          <h3>
-            <slot name="title" />
-          </h3>
+          <h3>{{ title }}</h3>
         </div>
-        
         <div class="rating-container">
           <div class="rating">
             <div class="stars">
@@ -27,28 +34,30 @@
                 :key="star"
                 class="rating-star"
               >
-            <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
-            <img src="@/assets/rating/empty-star.png"
-              v-for="star in emptyStars"
-              :key="star"
-              class="rating-star"
-            >
+              <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
+              <img
+                src="@/assets/rating/empty-star.png"
+                v-for="star in emptyStars"
+                :key="star"
+                class="rating-star"
+              >
             </div>
-              <span class="rating">
-                {{ rating }} / 5 (<slot name="amountOfRatings" />)
-              </span>
-            </div>
-            <p class="price">
-              A partir de R$<slot name="price" /> por pessoa
-            </p>
+            <span class="rating">
+              {{ rating }} / 5 (<slot name="amountOfRatings" />)
+            </span>
           </div>
+          <p class="price">
+            A partir de R$<slot name="price" /> por pessoa
+          </p>
+        </div>
       </div>
     </RouterLink>
   </article>
 </template>
 
 <script>
-//import { computed } from 'vue';
+//import { onMounted } from 'vue';
+import { computed } from 'vue';
 
 export default {
   props: {
@@ -63,30 +72,35 @@ export default {
     rating: {
       type: Number,
       required: true
+    },
+    title: {
+      type: String,
+      required: true
     }
   },
 
-  setup() {
+  setup(props) {
     const isFloat = (n) => Math.floor(n) !== n;
 
-    return {
-      isFloat
-    }
-  },
+    const hasHalfStar = computed(() => isFloat(props.rating));
+    const emptyStars = computed(() => 5 - Math.floor(props.rating) - (hasHalfStar.value ? 1 : 0));
+    const imgSrc = computed(() => require(`@/assets/photos/${props.img}`));
+    const convertTitleToKebab = computed(() => props.title.toLowerCase().replace(/\s+/g, '-'));
+  
+    /*const convertTitleToKebab = onMounted(() => {
+      return computed(() => props.title.toLowerCase().replace(/\s+/g, '-'));
+    });*/
 
-  computed: {
-    hasHalfStar() {
-      return this.isFloat(this.rating);
-    },
-    emptyStars() {
-      return 5 - Math.floor(this.rating) - (this.hasHalfStar);
-    },
-    imgSrc() {
-      return require(`@/assets/photos/${this.img}`);
+    return {
+      hasHalfStar,
+      emptyStars,
+      imgSrc,
+      convertTitleToKebab
     }
   }
 }
 </script>
+
 
 <style scoped>
 article {

@@ -42,5 +42,7 @@ html, body, #page-container {
 #page-container {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  box-sizing: border-box;
 }
 </style>

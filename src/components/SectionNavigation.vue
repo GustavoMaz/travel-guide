@@ -48,8 +48,9 @@ export default {
 nav {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  max-width: 1920px;
+  /*justify-content: space-between;*/
+  min-width: 760px;
+  max-width: 1440px;
   margin: 0 auto;
   list-style: none;
   z-index: 2;
@@ -58,7 +59,7 @@ nav {
 a {
   background-color: var(--shadow-color);
   border-radius: 16px 16px 0 0;
-  width: 12rem;
+  width: 25%;
   padding: 2rem;
   text-align: center;
   font-weight: bold;

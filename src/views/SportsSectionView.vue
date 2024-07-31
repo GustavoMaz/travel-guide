@@ -5,9 +5,9 @@
     rating="4.5"
     img="liverpool.jpg"
     imgAlt="Estádio do Liverpool Football Club"
+    title="Liverpool: Tour pelo Museu e Estádio do Liverpool Football Club"
   >
     <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Liverpool: Tour pelo Museu e Estádio do Liverpool Football Club</template>
     <template v-slot:amountOfRatings>969</template>
     <template v-slot:price>168,00</template>
   </TripCard>
@@ -16,9 +16,9 @@
     rating="4.9"
     img="zipline.jpg"
     imgAlt="Tirolesa em meio a floresta"
+    title="Experiência de tirolesa em Whistler: Ziptrek Eagle Tour"
   >
     <template v-slot:classifier>Radical</template>
-    <template v-slot:title>Experiência de tirolesa em Whistler: Ziptrek Eagle Tour</template>
     <template v-slot:amountOfRatings>1305</template>
     <template v-slot:price>59,90</template>
   </TripCard>
@@ -27,9 +27,9 @@
     rating="4.3"
     img="boat-rowing.jpg"
     imgAlt="Grupo de pessoas remando barco"
+    title="Roma: Passeio de Rafting Urbano no Rio Tibre com Pizza Romana"
   >
     <template v-slot:classifier>Tour guiado</template>
-    <template v-slot:title>Roma: Passeio de Rafting Urbano no Rio Tibre com Pizza Romana</template>
     <template v-slot:amountOfRatings>1305</template>
     <template v-slot:price>80,00</template>
   </TripCard>
