@@ -65,7 +65,6 @@ header {
   flex-direction: column;
   box-shadow: inset 0 0 80px 40px var(--shadow-color);
   overflow: hidden;
-  padding: 0 4rem; 
 }
 
 .bg-img {

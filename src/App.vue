@@ -1,24 +1,20 @@
 <template>
-<NavBar></NavBar>
-<div @click="disableMenu">
-  <TheHeader></TheHeader>
-  <main id="page-view">
+<div id="page-container">
+  <NavBar></NavBar>
+  <div @click="disableMenu">
     <RouterView />
-  </main>
-  
-  <TheFooter></TheFooter>
+  </div>
+  <TheFooter />
 </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue';
-import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
 
 export default {
   components: {
     NavBar,
-    TheHeader,
     TheFooter
   },
 
@@ -36,3 +32,15 @@ export default {
   }
 }
 </script>
+
+<style>
+/* Grudando o rodapé na parte de baixo da página, independentemente do tamanho da tela */
+html, body, #page-container {
+  height: 100vh;
+}
+
+#page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+</style>

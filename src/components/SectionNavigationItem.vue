@@ -1,5 +1,7 @@
 <template>
-  <RouterLink :to="route" :class="{ 'selected': isSelected }" @click="handleClick"> <slot /> </RouterLink>
+  <RouterLink :to="route" :class="{ 'selected': isSelected }" @click="handleClick">
+    <slot />
+  </RouterLink>
 </template>
 
 <script>
@@ -12,24 +14,22 @@ export default {
       type: String,
       required: true
     },
-
     selected: {
       type: Boolean,
       default: false
     },
   },
-  
   setup(props) {
     const route = useRoute();
     const isSelected = ref(props.selected);
 
-    // Watch for changes in the route to update isSelected
+    // Observando mudanças na rota para mudar o valor de isSelected 
     watch(
       () => route.path,
       (newPath) => {
         isSelected.value = newPath === props.route;
       },
-      { immediate: true } // Trigger immediate check on component mount
+      { immediate: true }
     );
 
     const handleClick = () => {

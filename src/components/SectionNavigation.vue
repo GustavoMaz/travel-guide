@@ -1,14 +1,15 @@
 <template>
 <nav id="section-navigation" class="section-navigation">
-  <SectionNavigationItem route="/" selected="true"><span v-if="!showIcon">Cultura</span> <img v-if="showIcon" src="../assets/culture.png"></SectionNavigationItem>
-  <SectionNavigationItem route="/gastronomy"><span v-if="!showIcon">Gastronomia</span> <img v-if="showIcon" src="../assets/gastronomy.png"></SectionNavigationItem>
-  <SectionNavigationItem route="/nature"><span v-if="!showIcon">Natureza</span> <img v-if="showIcon" src="../assets/nature.png"></SectionNavigationItem>
-  <SectionNavigationItem route="/sports"><span v-if="!showIcon">Esportes</span> <img v-if="showIcon" src="../assets/sports.png"></SectionNavigationItem>
+  <SectionNavigationItem route="/culture" :selected="currentRoute === '/culture'"><span v-if="!showIcon">Cultura</span> <img v-if="showIcon" src="../assets/culture.png"></SectionNavigationItem>
+  <SectionNavigationItem route="/gastronomy" :selected="currentRoute === '/gastronomy'"><span v-if="!showIcon">Gastronomia</span> <img v-if="showIcon" src="../assets/gastronomy.png"></SectionNavigationItem>
+  <SectionNavigationItem route="/nature" :selected="currentRoute === '/nature'"><span v-if="!showIcon">Natureza</span> <img v-if="showIcon" src="../assets/nature.png"></SectionNavigationItem>
+  <SectionNavigationItem route="/sports" :selected="currentRoute === '/sports'"><span v-if="!showIcon">Esportes</span> <img v-if="showIcon" src="../assets/sports.png"></SectionNavigationItem>
 </nav>
 </template>
-
+  
 <script>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import SectionNavigationItem from '@/components/SectionNavigationItem.vue';
 
 export default {
@@ -32,13 +33,17 @@ export default {
       window.removeEventListener('resize', handleResize);
     });
 
+    const route = useRoute();
+    const currentRoute = ref(route.path);
+
     return {
-      showIcon
+      showIcon,
+      currentRoute
     };
   }
 };
 </script>
-  
+
 <style scoped>
 nav {
   display: flex;
@@ -46,7 +51,6 @@ nav {
   justify-content: space-between;
   max-width: 1920px;
   margin: 0 auto;
-  width: 100%;
   list-style: none;
   z-index: 2;
 }
@@ -68,6 +72,5 @@ a {
     padding: 1rem;
   }
 }
-
 </style>
   

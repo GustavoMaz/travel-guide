@@ -95,7 +95,6 @@
 import TripCard from '@/components/TripCard.vue';
 import ContentSection from '@/components/ContentSection.vue';
 
-
 export default {
   components: {
     ContentSection,

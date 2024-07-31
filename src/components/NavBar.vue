@@ -6,7 +6,7 @@
     </button>
     <a href="#"><img src="../assets/logo.png" class="logo"></a>
     <ul class="nav-list">
-      <li class="nav-item"><a href="#">Ínicio</a></li>
+      <li class="nav-item"><RouterLink to="/">Ínicio</RouterLink></li>
       <li class="nav-item">
         <DropDown>
           <template v-slot:title>

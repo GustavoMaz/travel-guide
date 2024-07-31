@@ -88,7 +88,7 @@ footer {
 
 nav ul.nav-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--m-bottom-l);
   margin-bottom: var(--m-bottom-l);
 }
@@ -140,5 +140,4 @@ h2 {
 a:hover {
   color: var(--bg-color);
 }
-
 </style>
