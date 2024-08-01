@@ -58,7 +58,7 @@
             <li><a href="https://www.flaticon.com/br/icones-gratis/facebook" rel="external">Ícone Facebook criado por Freepik - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/icones-gratis/menu-aberto" rel="external">Ícone de menu criado por Ilham Fitrotul Hayat - Flaticon</a></li>
             <li><a href="https://www.flaticon.com/br/autores/pause08" rel="external">Ícones de livro, montanha, prato e bicicleta criados por Pause08 - Flaticon</a></li>
-            <li>Imagens - <a href="https://www.pexels.com" rel="external">Pexels</a>, <a href="https://www.getyourguide.com" rel="external">GetYouGuide</a></li>
+            <li>Imagens - <a href="https://www.pexels.com" rel="external">Pexels</a>, <a href="https://www.getyourguide.com" rel="external">GetYourGuide</a></li>
           </ul>
         </div>
       </li>

@@ -76,7 +76,7 @@ export default {
   width: 100%;
   display: grid;
   white-space: nowrap;
-  position: sticky;
+  position: fixed;
   top: 0;
   border-bottom: 1px solid var(--light-primary);
   z-index: 999;

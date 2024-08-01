@@ -2,8 +2,6 @@
   <div>
     <h1>{{ title }}</h1>
     <img :src="imgSrc" :alt="imgAlt" />
-    <p>Rating: {{ rating }}</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque officia placeat odit tenetur expedita quam error dolorem similique ex quas numquam, adipisci laboriosam, molestias libero delectus possimus quo. Similique, cum!</p>
   </div>
 </template>
 

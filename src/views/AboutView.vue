@@ -20,7 +20,7 @@
   margin-bottom: var(--m-bottom-xxl);
   display: grid;
   grid-template-columns: repeat(auto-fit, 1fr);
-  column-gap: 4rem;
+  grid-gap: 1rem;
   align-items: center;
 }
 
@@ -32,10 +32,15 @@ h1 {
 
 p {
   max-width: 42.5rem;
-  margin: auto, 0, var(--m-bottom-m), auto;
+  margin: auto, 0, /*var(--m-bottom-m)*/0, auto;
 }
 
 img { 
+  width: 100%;
+  object-fit: contain;
+}
+
+#about img:last-of-type {
   margin-bottom: var(--m-bottom-xl);
 }
 </style>

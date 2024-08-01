@@ -94,5 +94,6 @@ header h1 {
   color: var(--bg-color);
   text-shadow: 0 2px 8px var(--shadow-color);
   margin-bottom: var(--m-bottom-xl);
+  margin-top: 0;
 }
 </style>

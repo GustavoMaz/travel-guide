@@ -1,63 +1,64 @@
 <template>
-  <article>
-    <RouterLink 
-      class="card" 
-      :to="{
-        path: `/${convertTitleToKebab}`,
-        query: {
-          img: img,
-          imgAlt: imgAlt,
-          rating: rating,
-          title: title
-        }
-      }"
+<article>
+  <RouterLink 
+    class="card" 
+    :to="{
+      path: `/${convertTitleToKebab}`,
+      query: {
+        img: img,
+        imgAlt: imgAlt,
+        rating: rating,
+        title: title
+      }
+    }"
+  >
+    <img 
+      :src="imgSrc"
+      :alt="imgAlt"
+      class="thumbnail"
     >
-      <img 
-        :src="imgSrc"
-        :alt="imgAlt"
-        class="thumbnail"
-      >
 
-      <div class="card-text">
-        <div class="text-box">
-          <div class="classifier">
-            <slot name="classifier" />
-          </div>
-          <h3>{{ title }}</h3>
+    <div class="card-text">
+      <div class="text-box">
+        <div class="classifier">
+          <slot name="classifier" />
         </div>
-        <div class="rating-container">
-          <div class="rating">
-            <div class="stars">
-              <img
-                src="@/assets/rating/star.png"
-                v-for="star in Math.floor(rating)"
-                :key="star"
-                class="rating-star"
-              >
-              <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
-              <img
-                src="@/assets/rating/empty-star.png"
-                v-for="star in emptyStars"
-                :key="star"
-                class="rating-star"
-              >
-            </div>
-            <span class="rating">
-              {{ rating }} / 5 (<slot name="amountOfRatings" />)
-            </span>
-          </div>
-          <p class="price">
-            A partir de R$<slot name="price" /> por pessoa
-          </p>
-        </div>
+        <h3>{{ title }}</h3>
       </div>
-    </RouterLink>
-  </article>
+      <div class="rating-container">
+        <div class="rating">
+          <div class="stars">
+            <img
+              src="@/assets/rating/star.png"
+              v-for="star in Math.floor(rating)"
+              :key="star"
+              class="rating-star"
+            >
+            <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
+            <img
+              src="@/assets/rating/empty-star.png"
+              v-for="star in emptyStars"
+              :key="star"
+              class="rating-star"
+            >
+          </div>
+          <span class="rating">
+            {{ rating }} / 5 ({{ amountOfRatings }})
+          </span>
+        </div>
+        <p class="price"> 
+          A partir de R${{ price }} por pessoa
+        </p>
+      </div>
+    </div>
+  </RouterLink>
+</article>
 </template>
 
 <script>
 //import { onMounted } from 'vue';
 import { computed } from 'vue';
+//import StarRating from '@/components/StarRating.vue';
 
 export default {
   props: {
@@ -73,12 +74,24 @@ export default {
       type: Number,
       required: true
     },
+    amountOfRatings: {
+      type: Number,
+      required: true
+    },
+    price: {
+      type: String,
+      required: true
+    },
     title: {
       type: String,
       required: true
     }
   },
-
+/*
+  components: {
+    StarRating
+  },
+*/
   setup(props) {
     const isFloat = (n) => Math.floor(n) !== n;
 
@@ -149,11 +162,6 @@ img.thumbnail {
   z-index: 1;
 }
 
-.rating-container {
-  padding: 0 1rem 1rem;
-  box-sizing: border-box;
-}
-
 .classifier {
   color: var(--text-secondary);
   margin-bottom: var(--m-bottom-s);
@@ -161,6 +169,10 @@ img.thumbnail {
 
 h3 {
   margin-bottom: var(--m-bottom-m);
+}
+.rating-container {
+  padding: 0 1rem 1rem;
+  box-sizing: border-box;
 }
 
 div.rating {

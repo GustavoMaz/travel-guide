@@ -1,5 +1,7 @@
 <template>
-<CardArticle></CardArticle>
+<section>
+  <CardArticle></CardArticle>
+</section>
 </template>
 
 <script>

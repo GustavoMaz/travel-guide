@@ -7,11 +7,13 @@
   </section>
 </template>
 
-<style>
+<style scoped>
 section {
   width: 100%;
   padding: var(--m-bottom-l) 2rem;
   box-sizing: border-box;
+  position: relative;
+  top: 0;
 }
 
 .section-title {
