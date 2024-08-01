@@ -127,7 +127,7 @@ article {
 }
 
 img.thumbnail {
-  min-width: 288px;
+  /*min-width: 288px;*/
   min-height: 288px;
   max-height: 288px;
   object-fit: cover;

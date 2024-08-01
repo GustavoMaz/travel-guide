@@ -139,6 +139,12 @@ p {
   h1 {
     font-size: 1.5em;
   }
+  
+  img.photo {
+    width: 100%;
+    max-width: none;
+    max-height: 40vh;
+  }
 
   .rating-container {
     flex-direction: column;
@@ -151,10 +157,8 @@ p {
     flex-direction: column;
   }
 
-  img.photo {
-    width: 100%;
-    max-width: none;
-    max-height: 40vh;
+  .price-container {
+    align-items: center;
   }
 }
 </style>

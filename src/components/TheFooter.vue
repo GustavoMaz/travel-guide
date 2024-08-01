@@ -88,7 +88,7 @@ footer {
 
 nav ul.nav-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
   gap: var(--m-bottom-l);
   margin-bottom: var(--m-bottom-l);
 }
