@@ -8,7 +8,9 @@
         img: img,
         imgAlt: imgAlt,
         rating: rating,
-        title: title
+        title: title,
+        price: price,
+        amountOfRatings: amountOfRatings
       }
     }"
   >
@@ -30,15 +32,15 @@
           <div class="stars">
             <img
               src="@/assets/rating/star.png"
-              v-for="star in Math.floor(rating)"
-              :key="star"
+              v-for="n in Math.floor(rating)"
+              :key="n"
               class="rating-star"
             >
             <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
             <img
               src="@/assets/rating/empty-star.png"
-              v-for="star in emptyStars"
-              :key="star"
+              v-for="n in emptyStars"
+              :key="n"
               class="rating-star"
             >
           </div>
@@ -94,7 +96,6 @@ export default {
 */
   setup(props) {
     const isFloat = (n) => Math.floor(n) !== n;
-
     const hasHalfStar = computed(() => isFloat(props.rating));
     const emptyStars = computed(() => 5 - Math.floor(props.rating) - (hasHalfStar.value ? 1 : 0));
     const imgSrc = computed(() => require(`@/assets/photos/${props.img}`));

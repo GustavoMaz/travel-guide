@@ -89,6 +89,7 @@ ul {
 
 .main-action-button.bg-white:hover {
   background-color: var(--primary);
+  color: var(--bg-color);
 }
 
 

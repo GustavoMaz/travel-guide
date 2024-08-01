@@ -30,7 +30,8 @@
         </DropDown>
       </li>
       <li class="nav-item"><RouterLink to="/about">Sobre nós</RouterLink></li>
-      <li class="nav-item search-bar">
+      <li class="nav-item" v-if="!showSearchBar"><RouterLink to="/">Buscar</RouterLink></li>
+      <li class="nav-item search-bar" v-else>
         <div class="search-icon-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--text-primary)" class="bi bi-search search-icon" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -49,6 +50,7 @@
 <script>
 import DropDown from '@/components/DropDown.vue';
 import DropDownItem from './DropDownItem.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   components: {
@@ -57,14 +59,30 @@ export default {
   },
 
   setup() {
-
     const toggleMenu = () => {
       const menu = document.querySelector('#main-navigation .nav-list');
       menu.classList.toggle('active');
     }
 
+    const windowWidth = ref(window.innerWidth);
+    const showSearchBar = ref(windowWidth.value > 765);
+
+    const handleResize = () => {
+      windowWidth.value = window.innerWidth;
+      showSearchBar.value = windowWidth.value > 765;
+    }
+
+    onMounted(() => {
+      window.addEventListener('resize', handleResize);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', handleResize);
+    });
+
     return {
-      toggleMenu
+      toggleMenu,
+      showSearchBar
     }
   }
 }
