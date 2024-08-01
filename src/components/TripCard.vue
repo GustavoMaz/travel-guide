@@ -1,66 +1,62 @@
 <template>
-<article>
-  <RouterLink 
-    class="card" 
-    :to="{
-      path: `/${convertTitleToKebab}`,
-      query: {
-        img: img,
-        imgAlt: imgAlt,
-        rating: rating,
-        title: title,
-        price: price,
-        amountOfRatings: amountOfRatings
-      }
-    }"
-  >
-    <img 
-      :src="imgSrc"
-      :alt="imgAlt"
-      class="thumbnail"
+  <article>
+    <RouterLink
+      class="card"
+      :to="{
+        path: `/${convertTitleToKebab}`,
+        query: {
+          img: img,
+          imgAlt: imgAlt,
+          rating: rating,
+          price: price,
+          amountOfRatings: amountOfRatings
+        }
+      }"
     >
-
-    <div class="card-text">
-      <div class="text-box">
-        <div class="classifier">
-          <slot name="classifier" />
-        </div>
-        <h3>{{ title }}</h3>
-      </div>
-      <div class="rating-container">
-        <div class="rating">
-          <div class="stars">
-            <img
-              src="@/assets/rating/star.png"
-              v-for="n in Math.floor(rating)"
-              :key="n"
-              class="rating-star"
-            >
-            <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
-            <img
-              src="@/assets/rating/empty-star.png"
-              v-for="n in emptyStars"
-              :key="n"
-              class="rating-star"
-            >
+      <img 
+        :src="imgSrc"
+        :alt="imgAlt"
+        class="thumbnail"
+      >
+      <div class="card-text">
+        <div class="text-box">
+          <div class="classifier">
+            <slot name="classifier" />
           </div>
-          <span class="rating">
-            {{ rating }} / 5 ({{ amountOfRatings }})
-          </span>
+          <h3>{{ cardTitle }}</h3>
         </div>
-        <p class="price"> 
-          A partir de R${{ price }} por pessoa
-        </p>
+        <div class="rating-container">
+          <div class="rating">
+            <div class="stars">
+              <img
+                src="@/assets/rating/star.png"
+                v-for="n in Math.floor(rating)"
+                :key="n"
+                class="rating-star"
+              >
+              <img src="@/assets/rating/half-star.png" v-if="hasHalfStar" class="rating-star">
+              <img
+                src="@/assets/rating/empty-star.png"
+                v-for="n in emptyStars"
+                :key="n"
+                class="rating-star"
+              >
+            </div>
+            <span class="rating">
+              {{ rating }} / 5 ({{ amountOfRatings }})
+            </span>
+          </div>
+          <p class="price"> 
+            A partir de R${{ price }} por pessoa
+          </p>
+        </div>
       </div>
-    </div>
-  </RouterLink>
-</article>
+    </RouterLink>
+  </article>
 </template>
 
 <script>
-//import { onMounted } from 'vue';
 import { computed } from 'vue';
-//import StarRating from '@/components/StarRating.vue';
 
 export default {
   props: {
@@ -84,37 +80,27 @@ export default {
       type: String,
       required: true
     },
-    title: {
+    cardTitle: {
       type: String,
       required: true
     }
   },
-/*
-  components: {
-    StarRating
-  },
-*/
   setup(props) {
     const isFloat = (n) => Math.floor(n) !== n;
     const hasHalfStar = computed(() => isFloat(props.rating));
     const emptyStars = computed(() => 5 - Math.floor(props.rating) - (hasHalfStar.value ? 1 : 0));
     const imgSrc = computed(() => require(`@/assets/photos/${props.img}`));
-    const convertTitleToKebab = computed(() => props.title.toLowerCase().replace(/\s+/g, '-'));
-  
-    /*const convertTitleToKebab = onMounted(() => {
-      return computed(() => props.title.toLowerCase().replace(/\s+/g, '-'));
-    });*/
+    const convertTitleToKebab = computed(() => props.cardTitle.toLowerCase().replace(/\s+/g, '-'));
 
     return {
       hasHalfStar,
       emptyStars,
       imgSrc,
       convertTitleToKebab
-    }
+    };
   }
 }
 </script>
-
 
 <style scoped>
 article {

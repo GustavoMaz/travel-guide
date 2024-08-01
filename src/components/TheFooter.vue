@@ -17,9 +17,9 @@
         <div id="socials">
           <h2>Redes sociais</h2>
           <ul>
-            <li><RouterLink to="https://www.instagram.com/" rel="external"><img src="../assets/socials/instagram.png" alt="Instagram" title="Instagram"></RouterLink></li>
-            <li><RouterLink to="https://www.x.com/" rel="external"><img src="../assets/socials/x.png" alt="X" title="X"></RouterLink></li>
-            <li><RouterLink to="https://www.facebook.com/" rel="external"><img src="../assets/socials/facebook.png" alt="Facebook" title="Facebook"></RouterLink></li>
+            <li><a to="https://www.instagram.com/" rel="external"><img src="../assets/socials/instagram.png" alt="Instagram" title="Instagram"></a></li>
+            <li><a to="https://www.x.com/" rel="external"><img src="../assets/socials/x.png" alt="X" title="X"></a></li>
+            <li><a to="https://www.facebook.com/" rel="external"><img src="../assets/socials/facebook.png" alt="Facebook" title="Facebook"></a></li>
           </ul>
         </div>
       </li>
@@ -27,9 +27,9 @@
         <div id="company">
           <h2>Empresa</h2>
           <ul>
-            <li><RouterLink to="#">Quem somos</RouterLink></li>
-            <li><RouterLink to="#">Trabalhe conosco</RouterLink></li>
-            <li><RouterLink to="#">Blog</RouterLink></li>
+            <li><RouterLink to="/">Quem somos</RouterLink></li>
+            <li><RouterLink to="/">Trabalhe conosco</RouterLink></li>
+            <li><RouterLink to="/">Blog</RouterLink></li>
           </ul>
         </div>
       </li>

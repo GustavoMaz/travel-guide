@@ -5,7 +5,7 @@
       :rating="4"
       img="forest.jpg"
       imgAlt="Trilha na floresta"
-      title="Caminhada pela verdejante floresta de Monteverde"
+      cardTitle="Caminhada pela verdejante floresta de Monteverde"
       amountOfRatings="2003"
       price="79,90"
     >
@@ -16,7 +16,7 @@
       :rating="4.3"
       img="boat.jpg"
       imgAlt="Barco na superfície de lagoa"
-      title="Passeio de barco com locais"
+      cardTitle="Passeio de barco com locais"
       amountOfRatings="1060"
       price="89,90"
     >
@@ -27,7 +27,7 @@
       :rating="4"
       img="hill.jpg"
       imgAlt="Trilha passando por colinas"
-      title="Trilha de 3 horas pelas colinas da Califórnia"
+      cardTitle="Trilha de 3 horas pelas colinas da Califórnia"
       amountOfRatings="800"
       price="99,90"
     >
@@ -38,7 +38,7 @@
       :rating="4.9"
       img="whale.jpg"
       imgAlt="Baleia saltando para fora d'água"
-      title="Observação de baleias e golfinhos"
+      cardTitle="Observação de baleias e golfinhos"
       amountOfRatings="778"
       price="110,00"
     >
@@ -49,7 +49,7 @@
       :rating="4"
       img="forest.jpg"
       imgAlt="Trilha na floresta"
-      title="Caminhada pela verdejante floresta de Monteverde"
+      cardTitle="Caminhada pela verdejante floresta de Monteverde"
       amountOfRatings="2003"
       price="79,90"
     >
@@ -60,7 +60,7 @@
       :rating="4.3"
       img="boat.jpg"
       imgAlt="Barco na superfície de lagoa"
-      title="Passeio de barco com locais"
+      cardTitle="Passeio de barco com locais"
       amountOfRatings="1060"
       price="89,90"
     >
@@ -71,7 +71,7 @@
       :rating="4"
       img="hill.jpg"
       imgAlt="Trilha passando por colinas"
-      title="Trilha de 3 horas pelas colinas da Califórnia"
+      cardTitle="Trilha de 3 horas pelas colinas da Califórnia"
       amountOfRatings="800"
       price="99,90"
     >
@@ -82,7 +82,7 @@
       :rating="4.9"
       img="whale.jpg"
       imgAlt="Baleia saltando para fora d'água"
-      title="Observação de baleias e golfinhos"
+      cardTitle="Observação de baleias e golfinhos"
       amountOfRatings="778"
       price="110,00"
     >

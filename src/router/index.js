@@ -38,10 +38,10 @@ const routes = [
     component: () => import('@/views/AboutView.vue')
   },
   {
-    path: '/:title',
+    path: '/:cardTitle',
     name: 'article',
     component: () => import('@/views/CardArticleView.vue'),
-    props: route => ({ title: route.params.title })
+    props: route => ({ cardTitle: route.params.cardTitle })
   }
 ]
 

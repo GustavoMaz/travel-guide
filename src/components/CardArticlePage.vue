@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <h1>{{ title }}</h1>
-
+    <h1>{{ cardTitle }}</h1>
     <div class="rating-container">
       <div class="stars">
         <img
@@ -22,7 +21,6 @@
         <span> {{ rating }} ({{ amountOfRatings }} avaliações)</span>
       </div>
     </div>
-    
     <div class="content">
       <img :src="imgSrc" :alt="imgAlt" class="photo" />
       <div>
@@ -36,7 +34,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -47,13 +44,14 @@ import { useRoute } from 'vue-router';
 export default defineComponent({
   setup() {
     const route = useRoute();
-
+    const pathSegments = route.path.split('/');
+    const cardTitle = pathSegments[pathSegments.length - 1].replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+    
     const img = route.query.img || '';
     const imgAlt = route.query.imgAlt || '';
     const rating = parseFloat(route.query.rating) || 0;
     const price = route.query.price || '';
     const amountOfRatings = parseInt(route.query.amountOfRatings) || 0;
-    const title = route.query.title || '';
 
     const imgSrc = computed(() => require(`../assets/photos/${img}`));
 
@@ -64,13 +62,13 @@ export default defineComponent({
     return {
       imgAlt,
       rating,
-      title,
+      cardTitle,
       imgSrc,
       price,
       amountOfRatings,
       hasHalfStar,
       emptyStars
-    }
+    };
   }
 })
 </script>
@@ -138,6 +136,25 @@ p {
 }
 
 @media only screen and (max-width: 765px) {
-  
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: var(--m-bottom-l);
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  img.photo {
+    width: 100%;
+    max-width: none;
+    max-height: 40vh;
+  }
 }
 </style>
