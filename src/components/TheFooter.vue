@@ -65,7 +65,7 @@
 
     </ul>
   </nav>
-  <p>&copy; 2024 - Guia de Viajem | RS, Brasil</p>
+  <p>&copy; 2024 - Guia de Viagens | RS, Brasil</p>
 </footer>
 </template>
 

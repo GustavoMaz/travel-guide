@@ -19,7 +19,7 @@ export default {
   },
 
   setup() {
-    document.title = 'Guia de Viajem';
+    document.title = 'Guia de Viagens';
 
     const disableMenu = () => {
       const menu = document.querySelector('#main-navigation .nav-list');
