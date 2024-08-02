@@ -44,14 +44,15 @@ import { useRoute } from 'vue-router';
 export default defineComponent({
   setup() {
     const route = useRoute();
-    const pathSegments = route.path.split('/');
-    const cardTitle = pathSegments[pathSegments.length - 1].replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-    
     const img = route.query.img || '';
     const imgAlt = route.query.imgAlt || '';
     const rating = parseFloat(route.query.rating) || 0;
     const price = route.query.price || '';
     const amountOfRatings = parseInt(route.query.amountOfRatings) || 0;
+    /*const cardTitle = (route.query.cardTitle/*.replace(/-/g, ' ')
+      .toLowerCase()
+      .replace(/(^\w{1}|\s+\w{1})/gu, match => match.toUpperCase())) || '';*/
+    const cardTitle = route.query.cardTitle || '';
 
     const imgSrc = computed(() => require(`../assets/photos/${img}`));
 

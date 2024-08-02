@@ -9,7 +9,8 @@
           imgAlt: imgAlt,
           rating: rating,
           price: price,
-          amountOfRatings: amountOfRatings
+          amountOfRatings: amountOfRatings,
+          cardTitle: cardTitle,
         }
       }"
     >

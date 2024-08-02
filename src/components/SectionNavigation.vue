@@ -49,7 +49,7 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   /*justify-content: space-between;*/
-  min-width: 760px;
+  min-width: 765px;
   max-width: 1440px;
   margin: 0 auto;
   list-style: none;
@@ -67,8 +67,12 @@ a {
 }
 
 @media only screen and (max-width: 765px) {
+  nav#section-navigation {
+    min-width: 100%;
+    width: 100%;
+  }
+
   a {
-    width: 25vw;
     box-sizing: border-box;
     padding: 1rem;
   }
